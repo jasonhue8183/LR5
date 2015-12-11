@@ -2,7 +2,7 @@
 
 angular.module('angularjsstatefullnocacheApp', ['LocalStorageModule', 
     'ngResource', 'ngCookies', 'ngAria', 'ngCacheBuster', 'ngFileUpload',
-    'ui.bootstrap', 'ui.router',  'infinite-scroll', 'angular-loading-bar'])
+    'ui.bootstrap', 'ui.router',  'infinite-scroll', 'angular-loading-bar', 'oc.lazyLoad'])
 
     .run(function ($rootScope, $location, $window, $http, $state,  Auth, Principal, ENV, VERSION) {
         
@@ -46,10 +46,15 @@ angular.module('angularjsstatefullnocacheApp', ['LocalStorageModule',
             }
         };
     })
-    .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider,  httpRequestInterceptorCacheBusterProvider, AlertServiceProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider,  httpRequestInterceptorCacheBusterProvider, AlertServiceProvider, $ocLazyLoadProvider) {
         // uncomment below to make alerts look like toast
         //AlertServiceProvider.showAsToast(true);
 
+    	 $ocLazyLoadProvider.config({
+    	      debug:false,
+    	      events:true,
+    	    });
+    	 
         //enable CSRF
         $httpProvider.defaults.xsrfCookieName = 'CSRF-TOKEN';
         $httpProvider.defaults.xsrfHeaderName = 'X-CSRF-TOKEN';
@@ -62,11 +67,23 @@ angular.module('angularjsstatefullnocacheApp', ['LocalStorageModule',
             'abstract': true,
             views: {
                 'navbar@': {
-                    templateUrl: 'scripts/components/navbar/navbar.html',
+                	templateUrl: 'scripts/app/main/main-sb.html',
                     controller: 'NavbarController'
                 }
             },
             resolve: {
+            	loadMyDirectives:function($ocLazyLoad){
+            		return $ocLazyLoad.load(
+                            {
+                                name:'angularjsstatefullnocacheApp',
+                                files:[
+                                'scripts/components/header/header.js',
+                                'scripts/components/header/header-notification/header-notification.js',
+                                'scripts/components/sidebar/sidebar.js',
+                                'scripts/components/sidebar/sidebar-search/sidebar-search.js'
+                                ]
+                            })
+            	},
                 authorize: ['Auth',
                     function (Auth) {
                         return Auth.authorize();
