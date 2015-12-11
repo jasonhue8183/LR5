@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "angularjsstatefullnocache",
+    "packageName": "com.mycompany.myapp",
+    "packageFolder": "com/mycompany/myapp",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": false,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "99dfdda4082bdeadecb6528702a20b4e6a93bfdd",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}
