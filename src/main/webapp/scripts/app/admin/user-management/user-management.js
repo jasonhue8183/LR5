@@ -11,7 +11,7 @@ angular.module('angularjsstatefullnocacheApp')
                     pageTitle: 'angularjsstatefullnocache'
                 },
                 views: {
-                    'content@': {
+                    'content@site': {
                         templateUrl: 'scripts/app/admin/user-management/user-management.html',
                         controller: 'UserManagementController'
                     }
@@ -28,7 +28,7 @@ angular.module('angularjsstatefullnocacheApp')
                     pageTitle: 'angularjsstatefullnocache'
                 },
                 views: {
-                    'content@': {
+                    'content@site': {
                         templateUrl: 'scripts/app/admin/user-management/user-management-detail.html',
                         controller: 'UserManagementDetailController'
                     }

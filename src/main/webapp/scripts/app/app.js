@@ -66,9 +66,12 @@ angular.module('angularjsstatefullnocacheApp', ['LocalStorageModule',
         $stateProvider.state('site', {
             'abstract': true,
             views: {
-                'navbar@': {
-                	templateUrl: 'scripts/app/main/main-sb.html',
-                    controller: 'NavbarController'
+                'header@': {
+                	template: '<header></header>',
+                	controller: 'HeaderNavbarController'
+                },
+                'sideBar@': {
+                	template: '<sidebar></sidebar>'
                 }
             },
             resolve: {
