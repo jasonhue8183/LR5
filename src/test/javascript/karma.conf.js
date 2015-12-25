@@ -30,6 +30,8 @@ module.exports = function (config) {
             'main/webapp/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
             'main/webapp/bower_components/metisMenu/dist/metisMenu.js',
             'main/webapp/bower_components/oclazyload/dist/ocLazyLoad.js',
+            'main/webapp/bower_components/javascript-detect-element-resize/detect-element-resize.js',
+            'main/webapp/bower_components/angular-gridster/src/angular-gridster.js',
             'main/webapp/bower_components/angular-mocks/angular-mocks.js',
             // endbower
             'main/webapp/scripts/app/app.js',

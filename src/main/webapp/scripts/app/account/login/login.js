@@ -17,7 +17,7 @@ angular.module('angularjsstatefullnocacheApp')
                     }
                 },
                 resolve: {
-                    
+                	
                 }
             });
     });

@@ -2,7 +2,7 @@
 
 angular.module('angularjsstatefullnocacheApp', ['LocalStorageModule', 
     'ngResource', 'ngCookies', 'ngAria', 'ngCacheBuster', 'ngFileUpload',
-    'ui.bootstrap', 'ui.router',  'infinite-scroll', 'angular-loading-bar', 'oc.lazyLoad'])
+    'ui.bootstrap', 'ui.router',  'infinite-scroll', 'angular-loading-bar', 'oc.lazyLoad', 'gridster'])
 
     .run(function ($rootScope, $location, $window, $http, $state,  Auth, Principal, ENV, VERSION) {
         
@@ -69,9 +69,6 @@ angular.module('angularjsstatefullnocacheApp', ['LocalStorageModule',
                 'header@': {
                 	template: '<header></header>',
                 	controller: 'HeaderNavbarController'
-                },
-                'sideBar@': {
-                	template: '<sidebar></sidebar>'
                 }
             },
             resolve: {

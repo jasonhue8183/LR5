@@ -18,7 +18,9 @@ angular.module('angularjsstatefullnocacheApp')
                 if ($rootScope.previousStateName === 'register') {
                     $state.go('home');
                 } else {
+                	console.log($state.get());
                     $rootScope.back();
+                //	$state.go('^.^.dashboardsidemenu.dashbaordmenu');
                 }
             }).catch(function () {
                 $scope.authenticationError = true;
